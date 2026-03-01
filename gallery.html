@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Galerie – Dynamique Studio Photographie</title>
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- POLICE -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background: #fff;
+  color: #111;
+}
+
+a { text-decoration: none; color: inherit; }
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   GALERIE
+========================= */
+.section-light {
+  padding: 140px 0 80px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 36px;
+}
+
+
+/* 👉 AJOUT : sous-titre */
+.gallery-subtitle {
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2000;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 85%;
+}
+
+/* CLOSE */
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ARROWS */
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 20px;
+}
+
+.lightbox-arrow.left { left: 20px; }
+.lightbox-arrow.right { right: 20px; }
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 14px;
+  border-top: 1px solid #eee;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .lightbox-arrow { font-size: 40px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-content">
+    <div class="logo">DYNAMIQUE STUDIO</div>
+    <ul class="menu">
+      <li><a href="index.html">Accueil</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+<!-- GALERIE -->
+<section class="section-light">
+  <div class="container">
+    <h2>Galerie</h2>
+
+    <!-- 👉 AJOUT SANS MODIFICATION -->
+    <p class="gallery-subtitle">Quelques images</p>
+
+    <div class="gallery-grid">
+      <img src="assets/images/photo.1.jpg">
+      <img src="assets/images/photo.2.jpg">
+      <img src="assets/images/photo3.jpg">
+      <img src="assets/images/photo4.jpg">
+      <img src="assets/images/photo5.jpg">
+      <img src="assets/images/photo6.jpg">
+      <img src="assets/images/photo7.jpg">
+      <img src="assets/images/photo8.jpeg">
+      <img src="assets/images/photo9.jpeg">
+      <img src="assets/images/photo10.jpeg">
+      <img src="assets/images/photo11.jpeg">
+      <img src="assets/images/photo12.jpeg">
+      <img src="assets/images/photo13.JPG">
+      <img src="assets/images/photo14.jpeg">
+      <img src="assets/images/photo15.JPG">
+      <img src="assets/images/photo16.JPG">
+      <img src="assets/images/photo17.JPG">
+      <img src="assets/images/photo18.JPG">
+      <img src="assets/images/photo19.JPG">
+      <img src="assets/images/photo20.jpeg">
+      <img src="assets/images/photo21.jpeg">
+      <img src="assets/images/photo22.JPG">
+      <img src="assets/images/photo23.jpg">
+      <img src="assets/images/photo24.jpg">
+      <img src="assets/images/photo25.JPG">
+      <img src="assets/images/photo26.JPG">
+      <img src="assets/images/photo27.jpeg">
+      <img src="assets/images/photo28.JPG">
+      <img src="assets/images/photo29.JPG">
+      <img src="assets/images/photo30.JPG">
+      <img src="assets/images/photo31.jpeg">
+      <img src="assets/images/photo32.jpeg">
+      <img src="assets/images/photo33.jpeg">
+      <img src="assets/images/photo34.jpeg">
+      <img src="assets/images/photo35.jpeg">
+      <img src="assets/images/photo36.jpeg">
+      <img src="assets/images/photo37.jpeg">
+      <img src="assets/images/photo38.JPG">
+      <img src="assets/images/photo39.JPG">
+      <img src="assets/images/photo40.JPG">
+      <img src="assets/images/photo41.JPG">
+      <img src="assets/images/photo42.JPG">
+      <img src="assets/images/photo43.JPG">
+      <img src="assets/images/photo44.JPG">
+      <img src="assets/images/photo45.JPG">
+      <img src="assets/images/photo46.JPG">
+      <img src="assets/images/photo47.JPG">
+      <img src="assets/images/photo48.JPG">
+      <img src="assets/images/photo49.JPG">
+      <img src="assets/images/photo50.jpeg">
+      <img src="assets/images/photo51.JPG">
+      <img src="assets/images/photo52.JPG">
+      <img src="assets/images/photo53.JPG">
+      <img src="assets/images/photo54.JPG">
+      <img src="assets/images/photo55.jpeg">
+      <img src="assets/images/photo56.jpeg">
+      <img src="assets/images/photo57.JPG">
+      <img src="assets/images/photo58.jpeg">
+      <img src="assets/images/photo59.jpeg">
+      <img src="assets/images/photo60.JPG">
+      <img src="assets/images/photo61.JPG">
+      <img src="assets/images/photo62.jpg">
+      <img src="assets/images/photo63.JPG">
+      <img src="assets/images/photo64.jpeg">
+
+      <!-- ajoute toutes tes images ici -->
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="close">&times;</span>
+  <span class="lightbox-arrow left" id="prev">&#10094;</span>
+  <img class="lightbox-img" id="lightbox-img">
+  <span class="lightbox-arrow right" id="next">&#10095;</span>
+</div>
+
+<footer>
+  © 2026 – Dynamique Studio Photographie
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const images = document.querySelectorAll(".gallery-grid img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.getElementById("close");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+
+  let index = 0;
+
+  function showImage() {
+    lightboxImg.src = images[index].src;
+  }
+
+  images.forEach((img, i) => {
+    img.addEventListener("click", () => {
+      index = i;
+      showImage();
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    showImage();
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    showImage();
+  }
+
+  closeBtn.onclick = closeLightbox;
+  nextBtn.onclick = nextImage;
+  prevBtn.onclick = prevImage;
+
+  document.addEventListener("keydown", e => {
+    if (!lightbox.classList.contains("active")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowRight") nextImage();
+    if (e.key === "ArrowLeft") prevImage();
+  });
+
+  lightbox.addEventListener("click", e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  /* SWIPE MOBILE */
+  let startX = 0;
+  lightbox.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  lightbox.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextImage();
+    if (endX - startX > 50) prevImage();
+  });
+
+});
+</script>
+
+</body>
+</html>
